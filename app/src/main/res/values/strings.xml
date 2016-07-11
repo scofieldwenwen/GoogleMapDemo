@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GoogleMapDemo</string>
+    <string name="app_about_title">谷歌地图Demo</string>
+    <string name="app_about">注意事项:\n 1.确保手机可以科学上网;\n 2.确保手机安装谷歌服务 \n 3.确保AndroidManifest的appkey正确且没有过期</string>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tronsis.googlemapdemo.MapUISettingActivity">
+
+    <fragment
+        android:id="@+id/map_ui"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="175dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:paddingEnd="5dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/zoom_buttons_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setZoomButtonsEnabled"
+                android:text="放大缩小按键" />
+
+            <CheckBox
+                android:id="@+id/compass_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setCompassEnabled"
+                android:text="指南针按键" />
+
+            <CheckBox
+                android:id="@+id/mylocationbutton_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:onClick="setMyLocationButtonEnabled"
+                android:text="定位按键" />
+
+            <CheckBox
+                android:id="@+id/mylocationlayer_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:onClick="setMyLocationLayerEnabled"
+                android:text="层级显示" />
+            <CheckBox
+                android:id="@+id/googlemap_tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:onClick="setMaptoolsEnabled"
+                android:text="marker跳转到谷歌地图app" />
+
+            <CheckBox
+                android:id="@+id/scroll_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setScrollGesturesEnabled"
+                android:text="滑动手势" />
+
+            <CheckBox
+                android:id="@+id/zoom_gestures_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setZoomGesturesEnabled"
+                android:text="缩放手势s" />
+
+            <CheckBox
+                android:id="@+id/tilt_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setTiltGesturesEnabled"
+                android:text="倾斜手势" />
+
+            <CheckBox
+                android:id="@+id/rotate_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setRotateGesturesEnabled"
+                android:text="旋转手势" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

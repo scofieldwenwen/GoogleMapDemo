@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@mipmap/pet_map_informations_bg"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal"
+              android:paddingBottom="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"
+        android:minWidth="80dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_pet_steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxWidth="220dp"
+            android:singleLine="true"
+            android:text="Steps: -"
+            android:textColor="#586695"
+            android:textSize="16dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_pet_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Power: -"
+            android:textColor="#586695"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:minWidth="60dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_pet_led"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/info_led"
+            android:drawablePadding="6dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Off"
+            android:textColor="#586695"
+            android:textSize="14dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_pet_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawableLeft="@mipmap/info_mode"
+            android:drawablePadding="6dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Normal"
+            android:textColor="#586695"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_pet_fence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawableLeft="@mipmap/info_fence"
+            android:drawablePadding="6dp"
+            android:ellipsize="end"
+            android:maxWidth="120dp"
+            android:singleLine="true"
+            android:text="No Fence"
+            android:textColor="#586695"
+            android:textSize="14dp"/>
+    </LinearLayout>
+</LinearLayout>
