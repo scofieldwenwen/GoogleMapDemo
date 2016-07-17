@@ -163,6 +163,9 @@ public class MapUISettingActivity extends AppCompatActivity implements OnMapRead
     }
 
     public void setZoomGesturesEnabled(View view){
+        if (!isMapReady()) {
+            return;
+        }
         //地图缩放手势
         uiSettings.setZoomGesturesEnabled(mCbZoomlGestures.isChecked());
     }

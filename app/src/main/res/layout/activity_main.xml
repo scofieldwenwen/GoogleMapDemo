@@ -18,13 +18,13 @@
 
             <Button
                 android:id="@+id/btn"
-                android:text="Basic Map"
+                android:text="Marker 标记"
                 android:onClick="onBasicMapClick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:text="Map UI Setting"
+                android:text="地图控件设置"
                 android:id="@+id/btn2"
                 android:onClick="onMapUISettingClick"
                 android:layout_width="match_parent"
