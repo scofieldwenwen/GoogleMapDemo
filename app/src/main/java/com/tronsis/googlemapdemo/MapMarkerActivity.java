@@ -2,6 +2,7 @@ package com.tronsis.googlemapdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ public class MapMarkerActivity extends AppCompatActivity implements
         GoogleMap.OnInfoWindowCloseListener,
         GoogleMap.OnInfoWindowLongClickListener, GoogleMap.OnMarkerDragListener
 {
+    private static final String TAG = "MapMarkerActivity";
     private GoogleMap mMap;
     private CustomInfoWindowAdapter infoAdapter;//标记信息窗适配器
     private CheckBox cbInfo;
@@ -69,6 +71,9 @@ public class MapMarkerActivity extends AppCompatActivity implements
         mMap.setOnInfoWindowClickListener(this);
         mMap.setOnInfoWindowCloseListener(this);
         mMap.setOnInfoWindowLongClickListener(this);
+
+        //marker拖动监听
+        mMap.setOnMarkerDragListener(this);
     }
 
     /**
@@ -93,6 +98,7 @@ public class MapMarkerActivity extends AppCompatActivity implements
         markerOptions.title("可以拖动的Marker").snippet("拖动监听事件");
         markerOptions.draggable(true);
         dragMarker = mMap.addMarker(markerOptions);
+        dragMarker.setDraggable(true);
 
     }
 
@@ -206,18 +212,27 @@ public class MapMarkerActivity extends AppCompatActivity implements
     @Override
     public void onMarkerDragStart(Marker marker) {
         //marker 拖动开始
+        marker.hideInfoWindow();
         dragMarker.setSnippet(dragMarker.getPosition().toString());
+        marker.showInfoWindow();
+        Log.d(TAG, "onMarkerDragStart: postion"+dragMarker.getPosition().toString());
     }
 
     @Override
     public void onMarkerDrag(Marker marker) {
         //marker 拖动
         dragMarker.setSnippet(dragMarker.getPosition().toString());
+        marker.hideInfoWindow();  //marker的信息窗如果要刷新，则调用hideInfoWindow，showInfoWindow这两个方法
+        marker.showInfoWindow();
+        Log.d(TAG, "onMarkerDrag: postion"+dragMarker.getPosition().toString());
     }
 
     @Override
     public void onMarkerDragEnd(Marker marker) {
         //marker 拖动结束
+        marker.hideInfoWindow();
         dragMarker.setSnippet(dragMarker.getPosition().toString());
+        marker.showInfoWindow();
+        Log.d(TAG, "onMarkerDragEnd: postion"+dragMarker.getPosition().toString());
     }
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -55,6 +56,8 @@ public class MapUISettingActivity extends AppCompatActivity implements OnMapRead
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        //移动摄像头到指定坐标,指定缩放级别
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(39.915378, 116.393058), 3));
         uiSettings = mMap.getUiSettings();
         addDefualtMarker();
         initMapUI();

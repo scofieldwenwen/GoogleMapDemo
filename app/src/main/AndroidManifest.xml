@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.tronsis.googlemapdemo">
-    <!--添加谷歌地图需要的权限-->
+
+    <!-- 添加谷歌地图需要的权限 -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -15,7 +16,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC6vBot3Tfu7OBdGcQmX69saMawdWOYK5g"/>
@@ -29,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".AboutActivity"
             android:label="关于"/>
@@ -40,6 +39,9 @@
         <activity
             android:name=".MapUISettingActivity"
             android:label="地图控件以及手势">
+        </activity>
+        <activity android:name=".CameraEvensActivity"
+                  android:label="地图点击 卫星摄像头">
         </activity>
     </application>
 
